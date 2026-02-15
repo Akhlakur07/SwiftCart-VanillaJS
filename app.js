@@ -20,7 +20,7 @@ const productsContainer = document.getElementById("products-container");
 const categoryContainer = document.getElementById("category-container");
 const cartCount = document.querySelector(".badge-primary");
 const cartItemsSpan = document.querySelector(".card-body .text-sm.font-medium");
-const cartSubtotal = document.querySelector(".card-body .text-info");
+const cartSubtotal = document.querySelector(".card-body .text-orange-600");
 const viewCartBtn = document.querySelector(".btn-primary.btn-block");
 const categoryTitle = document.getElementById("category-title");
 const categoryDescription = document.getElementById("category-description");
@@ -146,9 +146,9 @@ function addToCart(productId) {
   // Show success feedback
   const cartIcon = document.querySelector(".fa-cart-shopping");
   if (cartIcon) {
-    cartIcon.classList.add("text-primary", "scale-110");
+    cartIcon.classList.add("text-orange-600", "scale-110");
     setTimeout(() => {
-      cartIcon.classList.remove("text-primary", "scale-110");
+      cartIcon.classList.remove("text-orange-600", "scale-110");
     }, 300);
   }
 }
@@ -184,13 +184,13 @@ function createProductCard(product) {
   const displayCategory = formatCategoryName(product.category);
 
   return `
-    <div class="card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300" data-product-id="${product.id}">
+    <div class="card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-orange-100" data-product-id="${product.id}">
       <figure class="px-4 pt-4 h-48">
         <img src="${product.image}" alt="${product.title}" class="h-full w-full object-contain" />
       </figure>
       <div class="card-body">
         <div class="flex items-center gap-2 mb-1">
-          <span class="badge badge-sm badge-outline">${displayCategory}</span>
+          <span class="badge badge-sm badge-outline border-orange-500 text-orange-600">${displayCategory}</span>
         </div>
         <h3 class="card-title text-base line-clamp-1">${product.title}</h3>
         <div class="flex items-center gap-2">
@@ -201,7 +201,7 @@ function createProductCard(product) {
         </div>
         <p class="text-gray-600 text-sm line-clamp-2 mt-1">${product.description}</p>
         <div class="flex items-center justify-between mt-4">
-          <span class="text-2xl font-bold text-primary">$${product.price.toFixed(2)}</span>
+          <span class="text-2xl font-bold text-orange-600">$${product.price.toFixed(2)}</span>
           <div class="flex gap-2">
             <button class="btn btn-sm btn-outline btn-primary details-btn" data-product-id="${product.id}">
               Details
@@ -220,7 +220,7 @@ function createTrendingCard(product) {
   const starsHTML = generateStarsHTML(product.rating.rate);
 
   return `
-    <div class="card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300" data-product-id="${product.id}">
+    <div class="card bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-orange-100" data-product-id="${product.id}">
       <figure class="px-4 pt-4">
         <img src="${product.image}" alt="${product.title}" class="rounded-xl h-48 w-full object-contain" />
       </figure>
@@ -234,7 +234,7 @@ function createTrendingCard(product) {
         <h3 class="card-title text-lg line-clamp-1">${product.title}</h3>
         <p class="text-gray-600 text-sm line-clamp-2">${product.description}</p>
         <div class="flex items-center justify-between mt-4">
-          <span class="text-2xl font-bold text-primary">$${product.price.toFixed(2)}</span>
+          <span class="text-2xl font-bold text-orange-600">$${product.price.toFixed(2)}</span>
           <button class="btn btn-sm btn-outline btn-primary add-to-cart" data-product-id="${product.id}">Add to Cart</button>
         </div>
       </div>
@@ -248,7 +248,7 @@ function displayProducts(products) {
   if (!products || products.length === 0) {
     productsContainer.innerHTML = `
       <div class="col-span-full text-center py-12">
-        <p class="text-gray-500">No products found in this category.</p>
+        <p class="text-red-500">No products found in this category.</p>
       </div>
     `;
     return;
@@ -287,7 +287,7 @@ function displayCategories(categories) {
   if (!categoryContainer) return;
 
   let categoriesHTML = `
-    <button class="btn btn-sm rounded-full category-btn ${currentCategory === "all" ? "bg-black text-white hover:bg-gray-800" : "bg-white hover:bg-gray-100"}" data-category="all">
+    <button class="btn btn-sm rounded-full category-btn ${currentCategory === "all" ? "bg-orange-500 text-white hover:bg-orange-600" : "bg-white hover:bg-orange-50 text-gray-700 border border-orange-200"}" data-category="all">
       All Products
     </button>
   `;
@@ -296,7 +296,7 @@ function displayCategories(categories) {
     const displayName = formatCategoryName(category);
 
     categoriesHTML += `
-      <button class="btn btn-sm rounded-full category-btn ${currentCategory === category ? "bg-black text-white hover:bg-gray-800" : "bg-white hover:bg-gray-100"}" data-category="${category}">
+      <button class="btn btn-sm rounded-full category-btn ${currentCategory === category ? "bg-orange-500 text-white hover:bg-orange-600" : "bg-white hover:bg-orange-50 text-gray-700 border border-orange-200"}" data-category="${category}">
         ${displayName}
       </button>
     `;
@@ -312,19 +312,40 @@ function displayCategories(categories) {
 
       // Update active state for all category buttons
       document.querySelectorAll(".category-btn").forEach((b) => {
-        b.classList.remove("bg-black", "text-white");
-        b.classList.add("bg-white", "hover:bg-gray-100");
+        b.classList.remove(
+          "bg-orange-500",
+          "text-white",
+          "hover:bg-orange-600",
+        );
+        b.classList.add(
+          "bg-white",
+          "hover:bg-orange-50",
+          "text-gray-700",
+          "border",
+          "border-orange-200",
+        );
       });
-      e.target.classList.remove("bg-white", "hover:bg-gray-100");
-      e.target.classList.add("bg-black", "text-white");
+      e.target.classList.remove(
+        "bg-white",
+        "hover:bg-orange-50",
+        "text-gray-700",
+        "border",
+        "border-orange-200",
+      );
+      e.target.classList.add(
+        "bg-orange-500",
+        "text-white",
+        "hover:bg-orange-600",
+      );
 
       // Update title
       if (category === "all") {
-        categoryTitle.textContent = "All Products";
+        categoryTitle.innerHTML =
+          '<span class="border-b-4 border-orange-400 pb-2">All Products</span>';
         categoryDescription.textContent = "Browse our complete collection";
       } else {
         const displayName = formatCategoryName(category);
-        categoryTitle.textContent = displayName;
+        categoryTitle.innerHTML = `<span class="border-b-4 border-orange-400 pb-2">${displayName}</span>`;
         categoryDescription.textContent = `Explore our ${displayName} collection`;
       }
 
@@ -354,7 +375,7 @@ async function loadProductsByCategory(category) {
 
   productsContainer.innerHTML = `
     <div class="col-span-full flex justify-center py-12">
-      <span class="loading loading-spinner loading-lg text-primary"></span>
+      <span class="loading loading-spinner loading-lg text-orange-500"></span>
     </div>
   `;
 
@@ -391,7 +412,7 @@ function showProductDetails(productId) {
         <img src="${product.image}" alt="${product.title}" class="w-full h-auto object-contain rounded-lg" />
       </div>
       <div class="md:w-1/2">
-        <span class="badge badge-lg badge-outline mb-4">${product.category}</span>
+        <span class="badge badge-lg badge-outline border-orange-500 text-orange-600 mb-4">${product.category}</span>
         <h3 class="text-2xl font-bold mb-4">${product.title}</h3>
         <div class="flex items-center gap-4 mb-4">
           <div class="flex text-yellow-400">
@@ -401,8 +422,8 @@ function showProductDetails(productId) {
         </div>
         <p class="text-gray-700 mb-6">${product.description}</p>
         <div class="flex items-center justify-between">
-          <span class="text-3xl font-bold text-primary">$${product.price.toFixed(2)}</span>
-          <button class="btn btn-primary add-to-cart-from-modal" data-product-id="${product.id}">
+          <span class="text-3xl font-bold text-orange-600">$${product.price.toFixed(2)}</span>
+          <button class="btn bg-orange-500 hover:bg-orange-600 text-white border-0 add-to-cart-from-modal" data-product-id="${product.id}">
             <i class="fa-solid fa-cart-plus mr-2"></i>
             Add to Cart
           </button>
@@ -438,11 +459,21 @@ function handleButtonClick(e) {
 
     // Visual feedback
     button.classList.remove("btn-outline", "btn-primary");
-    button.classList.add("btn-success");
+    button.classList.add(
+      "bg-green-500",
+      "hover:bg-green-600",
+      "text-white",
+      "border-0",
+    );
     button.innerHTML = '<i class="fa-solid fa-check"></i>';
 
     setTimeout(() => {
-      button.classList.remove("btn-success");
+      button.classList.remove(
+        "bg-green-500",
+        "hover:bg-green-600",
+        "text-white",
+        "border-0",
+      );
       button.classList.add("btn-outline", "btn-primary");
       button.innerHTML = '<i class="fa-solid fa-cart-plus"></i>';
     }, 1500);

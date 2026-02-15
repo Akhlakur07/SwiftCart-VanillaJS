@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SwiftCart</title>
+    <title>SwiftCart - Your Modern Marketplace</title>
     <script
       src="https://kit.fontawesome.com/4639babd64.js"
       crossorigin="anonymous"
@@ -14,10 +14,65 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .btn-primary {
+        background-color: #f97316;
+        border-color: #f97316;
+        color: white;
+      }
+      .btn-primary:hover {
+        background-color: #ea580c;
+        border-color: #ea580c;
+      }
+      .btn-outline.btn-primary {
+        background-color: transparent;
+        border-color: #f97316;
+        color: #f97316;
+      }
+      .btn-outline.btn-primary:hover {
+        background-color: #f97316;
+        color: white;
+      }
+      .text-primary {
+        color: #f97316;
+      }
+      .badge-primary {
+        background-color: #f97316;
+        color: white;
+      }
+      .bg-primary {
+        background-color: #f97316;
+      }
+      .border-primary {
+        border-color: #f97316;
+      }
+      .hover\:text-primary:hover {
+        color: #f97316;
+      }
+      .focus\:ring-primary:focus {
+        --tw-ring-color: #f97316;
+      }
+      .link-primary {
+        color: #f97316;
+      }
+      .link-primary:hover {
+        color: #ea580c;
+      }
+      .loading-spinner {
+        color: #f97316;
+      }
+      .badge-outline.badge-primary {
+        color: #f97316;
+        border-color: #f97316;
+        background-color: transparent;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Navbar -->
-    <div class="navbar bg-gray-300 shadow-sm sticky top-0 z-50 px-4 md:px-8">
+  <body class="bg-white">
+    <!-- Navbar with orange accent -->
+    <div
+      class="navbar shadow-sm sticky top-0 z-50 px-4 md:px-8 border-b border-orange-200 backdrop-blur-sm bg-white/70"
+    >
       <div class="navbar-start">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -40,15 +95,22 @@
             tabindex="0"
             class="menu menu-sm dropdown-content bg-white rounded-box z-10 mt-3 w-52 p-2 shadow-lg"
           >
-            <li><a class="hover:bg-gray-100">Home</a></li>
-            <li><a class="hover:bg-gray-100">Products</a></li>
-            <li><a class="hover:bg-gray-100">About</a></li>
-            <li><a class="hover:bg-gray-100">Contact</a></li>
+            <li>
+              <a class="hover:bg-orange-50 hover:text-orange-600">Home</a>
+            </li>
+            <li>
+              <a class="hover:bg-orange-50 hover:text-orange-600">Products</a>
+            </li>
+            <li>
+              <a class="hover:bg-orange-50 hover:text-orange-600">About</a>
+            </li>
+            <li>
+              <a class="hover:bg-orange-50 hover:text-orange-600">Contact</a>
+            </li>
           </ul>
         </div>
         <a class="btn btn-ghost text-xl md:text-2xl tracking-wide">
-          <span class="font-bold">Swift</span
-          ><span class="font-light">Cart</span>
+          <span class="font-bold text-orange-600">SwiftCart</span>
         </a>
       </div>
       <div class="navbar-center hidden lg:flex">
@@ -57,25 +119,25 @@
         >
           <li>
             <a
-              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              class="hover:bg-transparent hover:text-orange-600 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300"
               >Home</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              class="hover:bg-transparent hover:text-orange-600 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300"
               >Products</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              class="hover:bg-transparent hover:text-orange-600 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300"
               >About</a
             >
           </li>
           <li>
             <a
-              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              class="hover:bg-transparent hover:text-orange-600 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300"
               >Contact</a
             >
           </li>
@@ -89,17 +151,17 @@
             class="btn btn-ghost btn-circle relative"
           >
             <div class="indicator">
-              <i class="fa-solid fa-cart-shopping text-gray-700 text-xl"></i>
+              <i class="fa-solid fa-cart-shopping text-orange-600 text-xl"></i>
               <span class="badge badge-sm badge-primary indicator-item">0</span>
             </div>
           </button>
           <div
             tabindex="0"
-            class="dropdown-content card card-compact bg-white shadow-xl w-64 mt-3"
+            class="dropdown-content card card-compact bg-white shadow-xl w-64 mt-3 border border-orange-100"
           >
             <div class="card-body">
               <span class="text-sm font-medium">0 items</span>
-              <span class="text-info">Subtotal: $0.00</span>
+              <span class="text-orange-600">Subtotal: $0.00</span>
               <div class="card-actions">
                 <button class="btn btn-primary btn-block btn-sm">
                   View Cart
@@ -112,41 +174,68 @@
     </div>
 
     <main>
-      <!-- Hero Section -->
+      <!-- Hero Section with updated Amazon-like text -->
       <div
         class="hero min-h-screen relative bg-[url(assets/hero.jpg)] bg-cover bg-center"
       >
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay bg-black/50"></div>
         <div class="hero-content text-center text-neutral-content z-10">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-4xl md:text-5xl font-bold">
-              Elevate Your Style
+          <div class="max-w-3xl">
+            <h1 class="mb-5 text-5xl md:text-6xl font-bold">
+              <span class="text-white">Welcome to </span>
+              <span class="text-orange-400">SwiftCart</span>
             </h1>
-            <p class="mb-8 text-lg md:text-xl text-gray-200">
-              Discover the perfect blend of comfort and elegance with our latest
-              collection
+            <p class="mb-8 text-xl md:text-2xl text-gray-200">
+              Your one-stop destination for everything you need. From
+              electronics to fashion, we've got millions of products at the best
+              prices.
             </p>
-            <button class="btn btn-primary btn-lg px-8 rounded-full">
-              Shop Now
-            </button>
+            <div class="flex flex-wrap gap-4 justify-center">
+              <button
+                class="btn btn-primary btn-lg px-8 rounded-full text-white bg-orange-500 hover:bg-orange-600 border-0"
+              >
+                Start Shopping
+              </button>
+              <button
+                class="btn btn-outline btn-lg px-8 rounded-full border-2 border-white text-white hover:bg-white hover:text-orange-600"
+              >
+                Best Deals
+              </button>
+            </div>
+            <div class="mt-12 flex flex-wrap gap-8 justify-center text-white">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-orange-400"></i>
+                <span>Free Delivery</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-rotate-left text-orange-400"></i>
+                <span>30-Day Returns</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-orange-400"></i>
+                <span>Secure Payment</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Features Section -->
-      <div class="py-16 px-4 bg-white">
+      <!-- Features Section with orange accents -->
+      <div class="py-16 px-4 bg-orange-50">
         <div class="max-w-7xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-light text-center mb-12">
-            Why Choose Us
+            <span class="border-b-4 border-orange-400 pb-2">Why Choose Us</span>
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Feature 1: Fast Delivery -->
-            <div class="text-center">
+            <div class="text-center group">
               <div class="flex justify-center mb-4">
                 <div
-                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                  class="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors"
                 >
-                  <i class="fa-solid fa-truck-fast text-3xl text-primary"></i>
+                  <i
+                    class="fa-solid fa-truck-fast text-3xl text-orange-500"
+                  ></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
@@ -157,12 +246,12 @@
             </div>
 
             <!-- Feature 2: 24/7 Support -->
-            <div class="text-center">
+            <div class="text-center group">
               <div class="flex justify-center mb-4">
                 <div
-                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                  class="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors"
                 >
-                  <i class="fa-solid fa-headset text-3xl text-primary"></i>
+                  <i class="fa-solid fa-headset text-3xl text-orange-500"></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
@@ -172,13 +261,13 @@
             </div>
 
             <!-- Feature 3: Secure Payment -->
-            <div class="text-center">
+            <div class="text-center group">
               <div class="flex justify-center mb-4">
                 <div
-                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                  class="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors"
                 >
                   <i
-                    class="fa-solid fa-hand-holding-dollar text-3xl text-primary"
+                    class="fa-solid fa-hand-holding-dollar text-3xl text-orange-500"
                   ></i>
                 </div>
               </div>
@@ -189,13 +278,13 @@
             </div>
 
             <!-- Feature 4: Easy Returns -->
-            <div class="text-center">
+            <div class="text-center group">
               <div class="flex justify-center mb-4">
                 <div
-                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                  class="w-16 h-16 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors"
                 >
                   <i
-                    class="fa-solid fa-arrow-rotate-left text-3xl text-primary"
+                    class="fa-solid fa-arrow-rotate-left text-3xl text-orange-500"
                   ></i>
                 </div>
               </div>
@@ -210,10 +299,10 @@
       </div>
 
       <!-- Trending / Top Rated Section -->
-      <div class="py-16 px-4 bg-gray-50">
+      <div class="py-16 px-4 bg-orange-50">
         <div class="max-w-7xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-light text-center mb-4">
-            Trending Now
+            <span class="border-b-4 border-orange-400 pb-2">Trending Now</span>
           </h2>
           <p class="text-gray-600 text-center mb-12">
             Our most popular picks this week
@@ -227,7 +316,7 @@
             <!-- Loading Spinner -->
             <div class="col-span-full flex justify-center py-12">
               <span
-                class="loading loading-spinner loading-lg text-primary"
+                class="loading loading-spinner loading-lg text-orange-500"
               ></span>
             </div>
           </div>
@@ -235,10 +324,12 @@
       </div>
 
       <!-- Categories Section -->
-      <div class="py-8 px-4 bg-white">
+      <div class="py-8 px-4 bg-orange-50">
         <div class="max-w-7xl mx-auto">
           <h2 class="text-2xl md:text-3xl font-light text-center mb-6">
-            Shop by Category
+            <span class="border-b-4 border-orange-400 pb-2"
+              >Shop by Category</span
+            >
           </h2>
           <div
             id="category-container"
@@ -247,7 +338,7 @@
             <!-- Categories will be loaded here by JavaScript -->
             <div class="flex justify-center py-4">
               <span
-                class="loading loading-spinner loading-md text-primary"
+                class="loading loading-spinner loading-md text-orange-500"
               ></span>
             </div>
           </div>
@@ -255,13 +346,13 @@
       </div>
 
       <!-- All Products Section -->
-      <div class="py-16 px-4 bg-gray-50">
+      <div class="py-16 px-4 bg-orange-50">
         <div class="max-w-7xl mx-auto">
           <h2
             id="category-title"
             class="text-3xl md:text-4xl font-light text-center mb-4"
           >
-            All Products
+            <span class="border-b-4 border-orange-400 pb-2">All Products</span>
           </h2>
           <p id="category-description" class="text-gray-600 text-center mb-12">
             Browse our complete collection
@@ -275,7 +366,7 @@
             <!-- Loading Spinner -->
             <div class="col-span-full flex justify-center py-12">
               <span
-                class="loading loading-spinner loading-lg text-primary"
+                class="loading loading-spinner loading-lg text-orange-500"
               ></span>
             </div>
           </div>
@@ -285,10 +376,10 @@
 
     <!-- Product Detail Modal -->
     <dialog id="product-modal" class="modal">
-      <div class="modal-box w-11/12 max-w-3xl">
+      <div class="modal-box w-11/12 max-w-3xl bg-white">
         <form method="dialog">
           <button
-            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:bg-orange-50"
           >
             ✕
           </button>
@@ -302,30 +393,340 @@
       </form>
     </dialog>
 
-    <!-- Cart Modal (Hidden by default) -->
+    <!-- Cart Modal -->
     <dialog id="cart-modal" class="modal">
-      <div class="modal-box w-11/12 max-w-2xl">
+      <div class="modal-box w-11/12 max-w-2xl bg-white">
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:bg-orange-50"
+          >
+            ✕
+          </button>
         </form>
-        <h3 class="font-bold text-2xl mb-6">Your Shopping Cart</h3>
-        <div id="cart-items-container" class="space-y-4 max-h-96 overflow-y-auto">
+        <h3 class="font-bold text-2xl mb-6 border-b border-orange-200 pb-2">
+          Your Shopping Cart
+        </h3>
+        <div
+          id="cart-items-container"
+          class="space-y-4 max-h-96 overflow-y-auto"
+        >
           <!-- Cart items will be loaded here -->
         </div>
         <div class="divider"></div>
         <div class="flex justify-between items-center mb-6">
           <span class="text-xl font-semibold">Total:</span>
-          <span id="cart-total" class="text-2xl font-bold text-primary">$0.00</span>
+          <span id="cart-total" class="text-2xl font-bold text-orange-600"
+            >$0.00</span
+          >
         </div>
         <div class="modal-action">
-          <button class="btn btn-primary" onclick="document.getElementById('cart-modal').close()">Continue Shopping</button>
-          <button class="btn btn-success" id="checkout-btn">Checkout</button>
+          <button
+            class="btn btn-outline border-orange-500 text-orange-600 hover:bg-orange-50"
+            onclick="document.getElementById('cart-modal').close()"
+          >
+            Continue Shopping
+          </button>
+          <button
+            class="btn bg-orange-500 hover:bg-orange-600 text-white border-0"
+            id="checkout-btn"
+          >
+            Checkout
+          </button>
         </div>
       </div>
       <form method="dialog" class="modal-backdrop">
         <button>close</button>
       </form>
     </dialog>
+
+    <!-- Newsletter Section -->
+    <div class="py-16 px-4 bg-orange-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-light mb-4">
+          <span class="border-b-4 border-orange-400 pb-2"
+            >Stay in the Loop</span
+          >
+        </h2>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+          Subscribe to our newsletter and get exclusive deals, new arrivals, and
+          special offers delivered straight to your inbox.
+        </p>
+
+        <!-- Newsletter Form -->
+        <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 px-4 py-3 rounded-lg border border-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
+          />
+          <button
+            class="btn bg-orange-500 hover:bg-orange-600 text-white border-0 px-8 py-3 rounded-lg font-semibold"
+          >
+            Subscribe
+          </button>
+        </div>
+
+        <p class="text-sm text-gray-500 mt-4">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-orange-200">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Footer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <!-- Brand Column -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">
+              <span class="text-orange-600">Swift</span
+              ><span class="text-gray-700">Cart</span>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Your one-stop destination for millions of products at the best
+              prices. Shop with confidence.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-orange-600 transition-colors"
+              >
+                <i class="fa-brands fa-facebook-f text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-orange-600 transition-colors"
+              >
+                <i class="fa-brands fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-orange-600 transition-colors"
+              >
+                <i class="fa-brands fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-orange-600 transition-colors"
+              >
+                <i class="fa-brands fa-youtube text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-orange-600 transition-colors"
+              >
+                <i class="fa-brands fa-pinterest-p text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column 1 -->
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-4">Shop</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >All Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Best Sellers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Sale & Deals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Gift Cards</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links Column 2 -->
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-4">Customer Service</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Shipping Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Returns & Exchanges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links Column 3 -->
+          <div>
+            <h4 class="font-semibold text-gray-900 mb-4">About</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Affiliate Program</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-orange-600 transition-colors"
+                  >Press</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-orange-200 pt-8">
+          <!-- Payment Methods and Copyright -->
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <!-- Payment Icons -->
+            <div class="flex gap-3 text-2xl text-gray-400">
+              <i
+                class="fa-brands fa-cc-visa hover:text-orange-600 transition-colors"
+              ></i>
+              <i
+                class="fa-brands fa-cc-mastercard hover:text-orange-600 transition-colors"
+              ></i>
+              <i
+                class="fa-brands fa-cc-amex hover:text-orange-600 transition-colors"
+              ></i>
+              <i
+                class="fa-brands fa-cc-paypal hover:text-orange-600 transition-colors"
+              ></i>
+              <i
+                class="fa-brands fa-cc-apple-pay hover:text-orange-600 transition-colors"
+              ></i>
+              <i
+                class="fa-brands fa-google-pay hover:text-orange-600 transition-colors"
+              ></i>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-gray-600 text-sm">
+              &copy; 2026 SwiftCart. All rights reserved.
+              <span class="mx-2">|</span>
+              <a href="#" class="hover:text-orange-600 transition-colors"
+                >Privacy Policy</a
+              >
+              <span class="mx-2">|</span>
+              <a href="#" class="hover:text-orange-600 transition-colors"
+                >Terms of Service</a
+              >
+            </div>
+
+            <!-- Country Selector -->
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-globe text-gray-400"></i>
+              <select
+                class="text-sm bg-transparent border border-orange-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              >
+                <option>United States (English)</option>
+                <option>United Kingdom (English)</option>
+                <option>Canada (English)</option>
+                <option>Canada (Français)</option>
+                <option>Australia (English)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Additional Footer Links -->
+          <div
+            class="flex flex-wrap justify-center gap-4 mt-6 text-xs text-gray-500"
+          >
+            <a href="#" class="hover:text-orange-600 transition-colors"
+              >Site Map</a
+            >
+            <a href="#" class="hover:text-orange-600 transition-colors"
+              >Accessibility</a
+            >
+            <a href="#" class="hover:text-orange-600 transition-colors"
+              >Cookie Preferences</a
+            >
+            <a href="#" class="hover:text-orange-600 transition-colors"
+              >Your Privacy Choices</a
+            >
+            <a href="#" class="hover:text-orange-600 transition-colors"
+              >Interest-Based Ads</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="app.js"></script>
   </body>
