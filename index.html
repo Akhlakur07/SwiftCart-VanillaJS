@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="navbar bg-white shadow-sm sticky top-0 z-50 px-4 md:px-8">
+    <div class="navbar bg-gray-300 shadow-sm sticky top-0 z-50 px-4 md:px-8">
       <div class="navbar-start">
         <div class="dropdown">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -109,6 +109,28 @@
         </div>
       </div>
     </div>
+
+    <main>
+      <div
+        class="hero min-h-screen relative bg-[url(assets/hero.jpg)] bg-cover bg-center"
+      >
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center text-neutral-content z-10">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-4xl md:text-5xl font-bold">
+              Elevate Your Style
+            </h1>
+            <p class="mb-8 text-lg md:text-xl text-gray-200">
+              Discover the perfect blend of comfort and elegance with our latest
+              collection
+            </p>
+            <button class="btn btn-primary btn-lg px-8 rounded-full">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
