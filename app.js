@@ -1,4 +1,3 @@
-// API Endpoints
 const API = {
   allProducts: "https://fakestoreapi.com/products",
   categories: "https://fakestoreapi.com/products/categories",
@@ -7,12 +6,11 @@ const API = {
   singleProduct: (id) => `https://fakestoreapi.com/products/${id}`,
 };
 
-// State
+
 let cart = [];
 let allProducts = [];
 let currentCategory = "all";
 
-// DOM Elements
 const trendingContainer = document.getElementById(
   "trending-products-container",
 );
@@ -143,7 +141,7 @@ function addToCart(productId) {
 
   updateCartUI();
 
-  // Show success feedback
+
   const cartIcon = document.querySelector(".fa-cart-shopping");
   if (cartIcon) {
     cartIcon.classList.add("text-orange-600", "scale-110");
@@ -178,7 +176,6 @@ function updateQuantity(productId, action) {
   displayCartItems();
 }
 
-// Product Display Functions
 function createProductCard(product) {
   const starsHTML = generateStarsHTML(product.rating.rate);
   const displayCategory = formatCategoryName(product.category);
@@ -282,7 +279,6 @@ function getTopRatedProducts(products, count) {
     .slice(0, count);
 }
 
-// Category Functions
 function displayCategories(categories) {
   if (!categoryContainer) return;
 
@@ -304,13 +300,11 @@ function displayCategories(categories) {
 
   categoryContainer.innerHTML = categoriesHTML;
 
-  // Add event listeners to category buttons
   document.querySelectorAll(".category-btn").forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       const category = e.target.dataset.category;
       currentCategory = category;
 
-      // Update active state for all category buttons
       document.querySelectorAll(".category-btn").forEach((b) => {
         b.classList.remove(
           "bg-orange-500",
@@ -338,7 +332,6 @@ function displayCategories(categories) {
         "hover:bg-orange-600",
       );
 
-      // Update title
       if (category === "all") {
         categoryTitle.innerHTML =
           '<span class="border-b-4 border-orange-400 pb-2">All Products</span>';
@@ -349,7 +342,6 @@ function displayCategories(categories) {
         categoryDescription.textContent = `Explore our ${displayName} collection`;
       }
 
-      // Load products for selected category
       await loadProductsByCategory(category);
     });
   });
@@ -399,7 +391,6 @@ async function loadProductsByCategory(category) {
   }
 }
 
-// Modal Functions
 function showProductDetails(productId) {
   const product = allProducts.find((p) => p.id === productId);
   if (!product || !modal || !modalContent) return;
@@ -434,7 +425,6 @@ function showProductDetails(productId) {
 
   modal.showModal();
 
-  // Add event listener for the modal's add to cart button
   const modalAddToCart = modalContent.querySelector(".add-to-cart-from-modal");
   if (modalAddToCart) {
     modalAddToCart.addEventListener("click", () => {
@@ -444,7 +434,7 @@ function showProductDetails(productId) {
   }
 }
 
-// Event Handlers
+
 function handleButtonClick(e) {
   // Add to cart button
   if (
@@ -457,7 +447,6 @@ function handleButtonClick(e) {
     const productId = parseInt(button.dataset.productId);
     addToCart(productId);
 
-    // Visual feedback
     button.classList.remove("btn-outline", "btn-primary");
     button.classList.add(
       "bg-green-500",
@@ -479,7 +468,7 @@ function handleButtonClick(e) {
     }, 1500);
   }
 
-  // Details button
+
   if (
     e.target.classList.contains("details-btn") ||
     e.target.parentElement?.classList.contains("details-btn")
@@ -491,7 +480,6 @@ function handleButtonClick(e) {
     showProductDetails(productId);
   }
 
-  // View Cart button
   if (e.target === viewCartBtn || e.target.parentElement === viewCartBtn) {
     if (cartModal) {
       displayCartItems();
@@ -499,7 +487,6 @@ function handleButtonClick(e) {
     }
   }
 
-  // Quantity buttons in cart modal
   if (
     e.target.classList.contains("quantity-btn") ||
     e.target.parentElement?.classList.contains("quantity-btn")
@@ -541,23 +528,20 @@ function handleButtonClick(e) {
   }
 }
 
-// Initialization
+
 document.addEventListener("DOMContentLoaded", async () => {
-  // Add global click listener
+
   document.addEventListener("click", handleButtonClick);
 
   try {
     const response = await fetch(API.allProducts);
     allProducts = await response.json();
 
-    // Get top 3 products by rating for trending section
     const topRated = getTopRatedProducts(allProducts, 3);
     displayTrendingProducts(topRated);
 
-    // Load categories
     await loadCategories();
 
-    // Load all products in the main grid
     displayProducts(allProducts);
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -570,6 +554,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (productsContainer) productsContainer.innerHTML = errorMessage;
   }
 
-  // Initialize cart UI
   updateCartUI();
 });
