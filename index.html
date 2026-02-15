@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftCart</title>
+    <script
+      src="https://kit.fontawesome.com/4639babd64.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="navbar bg-white shadow-sm sticky top-0 z-50 px-4 md:px-8">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-white rounded-box z-10 mt-3 w-52 p-2 shadow-lg"
+          >
+            <li><a class="hover:bg-gray-100">Home</a></li>
+            <li><a class="hover:bg-gray-100">Products</a></li>
+            <li><a class="hover:bg-gray-100">About</a></li>
+            <li><a class="hover:bg-gray-100">Contact</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl md:text-2xl tracking-wide">
+          <span class="font-bold">Swift</span
+          ><span class="font-light">Cart</span>
+        </a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul
+          class="menu menu-horizontal px-1 text-sm uppercase tracking-wide gap-2"
+        >
+          <li>
+            <a
+              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-transparent hover:text-gray-900 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 hover:after:w-[70%] after:h-0.5 after:bg-black after:transition-all after:duration-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <div class="dropdown dropdown-end">
+          <button
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost btn-circle relative"
+          >
+            <div class="indicator">
+              <i class="fa-solid fa-cart-shopping text-gray-700 text-xl"></i>
+              <span class="badge badge-sm badge-primary indicator-item">0</span>
+            </div>
+          </button>
+          <div
+            tabindex="0"
+            class="dropdown-content card card-compact bg-white shadow-xl w-64 mt-3"
+          >
+            <div class="card-body">
+              <span class="text-sm font-medium">0 items</span>
+              <span class="text-info">Subtotal: $0.00</span>
+              <div class="card-actions">
+                <button class="btn btn-primary btn-block btn-sm">
+                  View Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
