@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+    <!-- Navbar -->
     <div class="navbar bg-gray-300 shadow-sm sticky top-0 z-50 px-4 md:px-8">
       <div class="navbar-start">
         <div class="dropdown">
@@ -111,6 +112,7 @@
     </div>
 
     <main>
+      <!-- Hero Section -->
       <div
         class="hero min-h-screen relative bg-[url(assets/hero.jpg)] bg-cover bg-center"
       >
@@ -134,50 +136,74 @@
       <!-- Features Section -->
       <div class="py-16 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-light text-center mb-12">Why Choose Us</h2>
+          <h2 class="text-3xl md:text-4xl font-light text-center mb-12">
+            Why Choose Us
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Feature 1: Fast Delivery -->
             <div class="text-center">
               <div class="flex justify-center mb-4">
-                <div class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                >
                   <i class="fa-solid fa-truck-fast text-3xl text-primary"></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
-              <p class="text-gray-600">Free shipping on orders over $50. Delivered in 2-4 business days.</p>
+              <p class="text-gray-600">
+                Free shipping on orders over $50. Delivered in 2-4 business
+                days.
+              </p>
             </div>
-            
+
             <!-- Feature 2: 24/7 Support -->
             <div class="text-center">
               <div class="flex justify-center mb-4">
-                <div class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center">
+                <div
+                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                >
                   <i class="fa-solid fa-headset text-3xl text-primary"></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
-              <p class="text-gray-600">Our customer support team is always here to help you anytime.</p>
+              <p class="text-gray-600">
+                Our customer support team is always here to help you anytime.
+              </p>
             </div>
-            
+
             <!-- Feature 3: Secure Payment -->
             <div class="text-center">
               <div class="flex justify-center mb-4">
-                <div class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center">
-                  <i class="fa-solid fa-hand-holding-dollar text-3xl text-primary"></i>
+                <div
+                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-hand-holding-dollar text-3xl text-primary"
+                  ></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">Secure Payment</h3>
-              <p class="text-gray-600">100% secure transactions with encrypted payment processing.</p>
+              <p class="text-gray-600">
+                100% secure transactions with encrypted payment processing.
+              </p>
             </div>
-            
+
             <!-- Feature 4: Easy Returns -->
             <div class="text-center">
               <div class="flex justify-center mb-4">
-                <div class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center">
-                  <i class="fa-solid fa-arrow-rotate-left text-3xl text-primary"></i>
+                <div
+                  class="w-16 h-16 rounded-full bg-opacity-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-arrow-rotate-left text-3xl text-primary"
+                  ></i>
                 </div>
               </div>
               <h3 class="text-xl font-semibold mb-2">Easy Returns</h3>
-              <p class="text-gray-600">30-day hassle-free returns. We'll pick up the item from your door.</p>
+              <p class="text-gray-600">
+                30-day hassle-free returns. We'll pick up the item from your
+                door.
+              </p>
             </div>
           </div>
         </div>
@@ -186,14 +212,23 @@
       <!-- Trending / Top Rated Section -->
       <div class="py-16 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-light text-center mb-4">Trending Now</h2>
-          <p class="text-gray-600 text-center mb-12">Our most popular picks this week</p>
-          
+          <h2 class="text-3xl md:text-4xl font-light text-center mb-4">
+            Trending Now
+          </h2>
+          <p class="text-gray-600 text-center mb-12">
+            Our most popular picks this week
+          </p>
+
           <!-- Products Container - Will be populated by JavaScript -->
-          <div id="trending-products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            id="trending-products-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             <!-- Loading Spinner -->
             <div class="col-span-full flex justify-center py-12">
-              <span class="loading loading-spinner loading-lg text-primary"></span>
+              <span
+                class="loading loading-spinner loading-lg text-primary"
+              ></span>
             </div>
           </div>
         </div>
@@ -202,11 +237,18 @@
       <!-- Categories Section -->
       <div class="py-8 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
-          <h2 class="text-2xl md:text-3xl font-light text-center mb-6">Shop by Category</h2>
-          <div id="category-container" class="flex flex-wrap justify-center gap-3">
+          <h2 class="text-2xl md:text-3xl font-light text-center mb-6">
+            Shop by Category
+          </h2>
+          <div
+            id="category-container"
+            class="flex flex-wrap justify-center gap-3"
+          >
             <!-- Categories will be loaded here by JavaScript -->
             <div class="flex justify-center py-4">
-              <span class="loading loading-spinner loading-md text-primary"></span>
+              <span
+                class="loading loading-spinner loading-md text-primary"
+              ></span>
             </div>
           </div>
         </div>
@@ -215,28 +257,69 @@
       <!-- All Products Section -->
       <div class="py-16 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-          <h2 id="category-title" class="text-3xl md:text-4xl font-light text-center mb-4">All Products</h2>
-          <p id="category-description" class="text-gray-600 text-center mb-12">Browse our complete collection</p>
-          
+          <h2
+            id="category-title"
+            class="text-3xl md:text-4xl font-light text-center mb-4"
+          >
+            All Products
+          </h2>
+          <p id="category-description" class="text-gray-600 text-center mb-12">
+            Browse our complete collection
+          </p>
+
           <!-- Products Container -->
-          <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div
+            id="products-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
             <!-- Loading Spinner -->
             <div class="col-span-full flex justify-center py-12">
-              <span class="loading loading-spinner loading-lg text-primary"></span>
+              <span
+                class="loading loading-spinner loading-lg text-primary"
+              ></span>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Modal -->
+    <!-- Product Detail Modal -->
     <dialog id="product-modal" class="modal">
       <div class="modal-box w-11/12 max-w-3xl">
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
         </form>
         <div id="modal-content" class="py-4">
           <!-- Modal content will be loaded here by JavaScript -->
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Cart Modal (Hidden by default) -->
+    <dialog id="cart-modal" class="modal">
+      <div class="modal-box w-11/12 max-w-2xl">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <h3 class="font-bold text-2xl mb-6">Your Shopping Cart</h3>
+        <div id="cart-items-container" class="space-y-4 max-h-96 overflow-y-auto">
+          <!-- Cart items will be loaded here -->
+        </div>
+        <div class="divider"></div>
+        <div class="flex justify-between items-center mb-6">
+          <span class="text-xl font-semibold">Total:</span>
+          <span id="cart-total" class="text-2xl font-bold text-primary">$0.00</span>
+        </div>
+        <div class="modal-action">
+          <button class="btn btn-primary" onclick="document.getElementById('cart-modal').close()">Continue Shopping</button>
+          <button class="btn btn-success" id="checkout-btn">Checkout</button>
         </div>
       </div>
       <form method="dialog" class="modal-backdrop">
