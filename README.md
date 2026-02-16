@@ -1,5 +1,7 @@
 ﻿# SwiftCart-VanillaJS
 
+ Live Link: https://swiftcart-web.netlify.app/
+
 <h2>1) What is the difference between null and undefined?</h2>
    <p>Undefined means a variable has no value yet.</br>
    Null means the value is empty on purpose.</p>
